@@ -1,6 +1,7 @@
 # Ignore build and dist directories
 build/
 dist/
+dist.zip
 
 # Ignore spec files
 *.spec
