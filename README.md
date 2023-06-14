@@ -37,7 +37,7 @@ This is a Python implementation of a two-player chess game with all the standard
 ### Option 2: Download the Release
 
 1. Visit the [Releases](https://github.com/KabilanMA/chess-game-ai/releases) page of this GitHub repository.
-2. [Download](https://github.com/KabilanMA/chess-game-ai/releases/download/v1.0.0/chess.zip) the installer and follow the instruction to install the game (ChessGameSetup.exe). Uncheck the auto run at the end of the installation. (Because, there is a bug to be fixed in the auto run)
+2. [Download](https://github.com/KabilanMA/chess-game-ai/releases/download/v1.0.0/ChessGameSetup.exe) the installer and follow the instruction to install the game (ChessGameSetup.exe). Uncheck the auto run at the end of the installation. (Because, there is a bug to be fixed in the auto run)
 3. Go to the installed directory
 4. Open the main.exe executable file
 5. The game window will open, and you can start playing chess with a friend!
