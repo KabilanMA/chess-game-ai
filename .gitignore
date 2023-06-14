@@ -8,3 +8,7 @@ dist.zip
 
 # Ignore _pycache_ directories
 __pycache__/
+
+# Ignore release
+*.iss
+Output/
