@@ -51,7 +51,7 @@ class Main:
                         piece = board.squares[clicked_row][clicked_col].piece
                         # valid piece (color)?
                         if piece.color == game.next_player:
-                            board.calc_moves(piece, clicked_row, clicked_col)
+                            board.calc_moves(piece, clicked_row, clicked_col, True)
                             dragger.save_initial(event.pos)
                             dragger.drag_piece(piece)
                             # show methods
@@ -92,12 +92,21 @@ class Main:
 
                         # valid move ?
                         if board.valid_move(dragger.piece, move):
+                            # normal capture
                             captured = board.squares[released_row][released_col].has_piece()
+                            
+                            board.set_true_en_passant(dragger.piece)
 
                             board.move(dragger.piece, move)
                             # sound
                             game.play_sound(captured)
                             # show methods
+                            game.show_bg(screen)
+                            game.show_last_move(screen)
+                            game.show_pieces(screen)
+                            
+                            # check the pawn promotion and update
+                            board.check_promotion(board.last_moved_piece, board.last_move.final)
                             game.show_bg(screen)
                             game.show_last_move(screen)
                             game.show_pieces(screen)
@@ -113,6 +122,13 @@ class Main:
                     # changing method
                     if event.key == pygame.K_t:
                         game.change_theme()
+                        
+                    # reset method
+                    if event.key == pygame.K_r:
+                        game.reset()
+                        game = self.game
+                        board = self.game.board
+                        dragger = self.game.dragger
 
                 
                 # quit the application
